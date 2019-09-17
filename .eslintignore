@@ -1,0 +1,6 @@
+# node_moduiles
+node_modules/*
+
+# built files
+build/*
+dist/*

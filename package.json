@@ -1,0 +1,44 @@
+{
+  "name": "quora",
+  "version": "1.0.0",
+  "description": "Quora clone",
+  "main": "server.js",
+  "repository": "https://github.com/collinstheuncoder/quora.git",
+  "author": "Collins Orlando <collinstheuncoder@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon --exec babel-node server/src/server.js",
+    "client": "cd client && yarn start",
+    "prebuild": "rm -rf server/dist",
+    "build-babel": "babel -d ./server/dist ./server/src -s",
+    "build": "yarn build-babel",
+    "start": "node server/build/server.js",
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn build && cd client && yarn && yarn build"
+  },
+  "dependencies": {
+    "apollo-server": "^2.9.3",
+    "apollo-server-express": "^2.9.3",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "graphql": "^14.5.6",
+    "graphql-resolvers": "^0.3.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "validator": "^11.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "nodemon": "^1.19.2",
+    "prettier": "^1.18.2"
+  }
+}
