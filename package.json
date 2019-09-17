@@ -9,8 +9,8 @@
   "scripts": {
     "server": "nodemon --exec babel-node server/src/server.js",
     "client": "cd client && yarn start",
-    "prebuild": "rm -rf server/dist",
-    "build-babel": "babel -d ./server/dist ./server/src -s",
+    "prebuild": "rm -rf server/build",
+    "build-babel": "babel -d ./server/build ./server/src -s",
     "build": "yarn build-babel",
     "start": "node server/build/server.js",
     "heroku-postbuild": "YARN_PRODUCTION=false yarn build && cd client && yarn && yarn build"
