@@ -4,7 +4,7 @@ import config from '../config';
 
 const { dbUsername, dbPassword } = config;
 
-const dbUri = `mongodb+srv://${dbUsername}:${dbPassword}@quora-umz9p.gcp.mongodb.net/test?retryWrites=true`;
+const dbUri = `mongodb+srv://${dbUsername}:${dbPassword}@quora-umz9p.gcp.mongodb.net/test?retryWrites=true&w=majority`;
 
 // DB Config
 mongoose.Promise = global.Promise;
